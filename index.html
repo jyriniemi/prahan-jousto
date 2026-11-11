@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<title>Niemet Prahassa – Joustoversio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;800;900&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000000; --card:#0b0b0a; --ink:#efebe0; --on-ink:#0a0a09; --muted:#9b978c; --line:#2c2b28;
+  --accent:#e23d2e; --amber:#e3a52b; --amber-bg:#261e0c; --bad-bg:#2b110e; --soft:#1a1917;
+  --stencil:"Big Shoulders Stencil Display","Saira Stencil One","Stardos Stencil",Impact,"Arial Narrow",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body{
+  margin:0;color:var(--ink);font-family:var(--serif);font-size:1.0625rem;line-height:1.5;
+  -webkit-text-size-adjust:100%;
+  background-color:var(--bg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+main{max-width:40rem;margin:0 auto;padding:18px 16px 56px;min-height:100vh}
+h1,h2,h3,p{margin-top:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.grunge{filter:url(#grunge)}
+.enter{animation:enter .2s ease-out}
+@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Hero */
+.hero{padding:34px 0 26px}
+.hero h1{
+  margin:0;font-family:var(--stencil);font-weight:900;text-transform:none;
+  font-size:clamp(3.4rem,19vw,5.6rem);line-height:.86;letter-spacing:.01em;
+}
+.stamp{
+  display:inline-block;margin:16px 0 0;color:var(--accent);border:3px solid var(--accent);
+  padding:0 12px 1px;font-family:var(--stencil);font-weight:800;font-size:1.3rem;line-height:1.25;
+  transform:rotate(-2deg);
+}
+.hero p{margin:16px 0 0;color:var(--muted);max-width:28rem}
+
+/* Small header on the other screens */
+.mini{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 22px;min-height:2.2rem}
+.mini b{font-family:var(--stencil);font-weight:800;font-size:1.3rem;letter-spacing:.02em}
+.back{
+  appearance:none;background:none;border:0;padding:6px 0;color:var(--muted);cursor:pointer;
+  font-size:1rem;text-decoration:underline;text-underline-offset:3px;
+}
+.homelink{appearance:none;background:none;border:0;padding:0;margin:0;color:var(--ink);cursor:pointer;text-align:left}
+.prog{display:flex;gap:6px;margin:0 0 26px}
+.prog i{flex:1;height:5px;background:var(--line)}
+.prog i.on{background:var(--ink)}
+
+/* Question screens */
+.qt{
+  margin:0 0 6px;font-family:var(--stencil);font-weight:900;
+  font-size:clamp(2.5rem,13vw,3.8rem);line-height:.92;letter-spacing:.01em;
+}
+.qt:focus{outline:none}
+.qs{margin:0 0 22px;color:var(--muted)}
+.qgap{margin-bottom:22px}
+.big{
+  display:block;width:100%;text-align:left;appearance:none;cursor:pointer;
+  border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:0;
+  padding:13px 16px 12px;margin:0 0 10px;
+}
+.big b{display:block;font-family:var(--stencil);font-weight:800;font-size:1.85rem;line-height:1.02;letter-spacing:.015em}
+.big span{display:block;margin-top:3px;font-size:.98rem;color:var(--muted)}
+.big:active{background:var(--ink);color:var(--on-ink)}
+.big:active span{color:#4a4840}
+@media (hover:hover){
+  .big:hover{background:var(--ink);color:var(--on-ink)}
+  .big:hover span{color:#4a4840}
+}
+.big.s2{border-left:12px solid var(--amber)}
+.big.s3{border-left:12px solid var(--red,var(--accent))}
+.big.alt{border-style:dashed;border-color:var(--muted)}
+.big.lock{background:var(--ink);color:var(--on-ink)}
+.big.lock span{color:#4a4840}
+
+/* Plan: head */
+.dayhead{
+  margin:0 0 12px;font-family:var(--stencil);font-weight:900;
+  font-size:clamp(2.3rem,12vw,3.4rem);line-height:.92;letter-spacing:.01em;
+}
+.dayhead:focus{outline:none}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.pill{padding:1px 10px;background:var(--soft);font-size:.92rem;font-weight:600}
+.pill.alt{background:var(--amber-bg);color:var(--amber)}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.chip,.chipbtn{
+  font-family:var(--serif);font-weight:600;font-size:.95rem;line-height:1.2;
+  border:1.5px solid var(--ink);color:var(--ink);background:transparent;text-decoration:none;
+  padding:5px 13px;border-radius:0;cursor:pointer;
+}
+a.chip:hover,.chipbtn:hover{background:var(--soft)}
+
+/* Status */
+.status{border:2px solid var(--ink);padding:16px;margin:0 0 24px;background:var(--card)}
+.delayrow{display:flex;gap:14px;align-items:center}
+.delay{flex:none;background:var(--ink);color:var(--on-ink);padding:6px 12px 7px;text-align:center;min-width:6.6rem}
+.delay b{display:block;font-family:var(--stencil);font-weight:900;font-size:1.9rem;line-height:1}
+.delay span{font-size:.82rem;font-weight:600;line-height:1.1;display:block;margin-top:2px}
+.delay.lock{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.delay.hot{background:var(--accent);color:#fff}
+.quip{margin:0}
+.counts{margin:10px 0 0;color:var(--muted);font-size:.95rem}
+.anchors{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.anchors li{
+  font-weight:600;font-size:.98rem;padding:3px 10px;border-left:5px solid var(--ink);background:var(--soft);
+}
+.anchors li.moved{border-left-color:var(--accent)}
+.anchors li.tight{border-left-color:var(--amber);background:var(--amber-bg)}
+.anchors li.bad{border-left-color:var(--accent);background:var(--bad-bg)}
+
+.legend{margin:0 0 6px;color:var(--muted);font-size:.9rem}
+
+/* Items */
+.list{display:flex;flex-direction:column}
+.item{display:grid;grid-template-columns:4.6rem 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--line)}
+.item:first-child{border-top:0}
+.when{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.plate{
+  display:inline-block;font-family:var(--stencil);font-weight:900;font-size:1.55rem;line-height:1.08;
+  padding:1px 8px 0;border:2px solid var(--ink);background:transparent;color:var(--ink);
+}
+.plate.lock{background:var(--ink);color:var(--on-ink)}
+.plate.moved{background:var(--accent);border-color:var(--accent);color:#fff}
+.was{font-size:.9rem;color:var(--muted);text-decoration:line-through;padding-left:4px}
+.body h3{margin:0;font-family:var(--stencil);font-weight:800;font-size:1.6rem;line-height:1.02;letter-spacing:.01em}
+.body .d{margin:6px 0 0;color:var(--muted);font-size:1rem}
+.hint{margin:9px 0 0;padding-left:10px;border-left:3px solid var(--amber);font-size:.98rem}
+.warn{margin:9px 0 0;padding:6px 10px;background:var(--bad-bg);border-left:3px solid var(--accent);font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.tag{font-size:.88rem;font-weight:600;padding:0 8px;background:var(--soft)}
+.tag.light{background:var(--amber-bg);color:var(--amber)}
+.tag.pin{background:var(--ink);color:var(--on-ink)}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.gaprow{padding:6px 0}
+.gap{margin:0;padding:10px 12px;border:1.5px dashed var(--line);color:var(--muted);font-size:.95rem}
+
+.dropped{margin-top:18px;border:1.5px dashed var(--line);padding:2px 12px 6px}
+.dropped summary{cursor:pointer;font-family:var(--stencil);font-weight:800;font-size:1.3rem;padding:8px 0}
+.dropped ul{list-style:none;margin:0;padding:0}
+.dropped li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.dropped li div{min-width:0}
+.dropped li strong{font-family:var(--stencil);font-weight:800;font-size:1.25rem;display:block;line-height:1.1}
+.dropped li span{color:var(--muted);font-size:.92rem;display:block}
+.note{margin:20px 0 0;padding-left:12px;border-left:4px solid var(--ink);font-style:italic;color:var(--muted)}
+footer{margin-top:30px;color:var(--muted);font-size:.88rem}
+footer a{color:var(--ink)}
+@media (max-width:380px){
+  .item{grid-template-columns:4rem 1fr;gap:10px}
+  .delayrow{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){.enter{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="grunge" x="-2%" y="-12%" width="104%" height="124%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" seed="3" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -5 0 0 0 3.6" result="mask"/>
+    <feComposite in="rough" in2="mask" operator="in"/>
+  </filter>
+</svg>
+<main id="app"></main>
+<script>
+(function(){
+var T=function(h,m){return h*60+(m||0)};
+var fmt=function(m){return Math.floor(m/60)+'.'+String(m%60).padStart(2,'0')};
+var MAPS=function(q){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)};
+var DIR=function(q){return 'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(q)};
+var ORIG='https://joniurs.github.io/niemet-prahassa/';
+
+var WAKE=[0,20,45], SAKU=[0,15,40], HANG=[0,15,45,90];
+
+var DAYS=[
+{name:'Torstai',date:'12.11.',sub:'Lähtöpäivä. Ei kysymyksiä.',title:'Torstai – Saapuminen',delays:false,
+ lockNote:'Lähtöpäivä: lennot ja lounge ovat lukossa, joten tänään ei tarvitse päättää mitään.',
+ note:'Virittäytyminen kaupunkiin ja suvun historiaan.',
+ items:[
+  {id:'to-lounge',t:T(15,30),dur:90,kind:'fixed',key:'Lounge',title:'Tapaaminen OP Loungessa',
+   desc:'OP Lounge by Aspire, Helsinki-Vantaa. Saku hoitaa sisäänpääsyn. Selviydy perille!',
+   links:[['Loungen tiedot','https://www.finavia.fi/fi/lentoasemat/helsinki-vantaa/lounget/op-lounge-by-aspire']]},
+  {id:'to-fly',t:T(17,35),dur:0,kind:'fixed',key:'Lento',title:'AY1223 Helsinki → Praha',desc:'Helsinki-Vantaa, terminaali 2.'},
+  {id:'to-land',t:T(18,50),dur:70,kind:'fixed',title:'Lasku Prahaan (T2)',desc:'Bolt/Uber Malá Stranalle noin 25–35 min.',
+   links:[['Bolt','https://bolt.eu'],['Reitti majapaikkaan',DIR('Residence U Mecenáše Praha')]]},
+  {id:'to-check',t:T(20,0),dur:30,kind:'flex',title:'Majoittuminen: Residence U Mecenáše',desc:'Malostranské náměstí 10',
+   links:[['Kartta',MAPS('Residence U Mecenáše Praha')]]},
+  {id:'to-walk',t:T(20,30),dur:45,kind:'opt',title:'Iltakävely Kaarlensillalle',
+   desc:'Matkalla Dražického náměstí: talot 61 ja 62, joissa Hrabiet asuivat 1863 ja 1869. Josef kuoli talossa 61.',
+   links:[['Dražického nám.',MAPS('Dražického náměstí Praha')],['Kaarlensilta',MAPS('Charles Bridge Prague')]]},
+  {id:'to-beer',t:T(21,15),dur:90,kind:'flex',title:'Myöhäinen illallinen / ensimmäinen olut',desc:'U Hrocha on aivan majapaikan lähellä (Thunovská).',
+   links:[['U Hrocha',MAPS('U Hrocha Thunovská Praha')]]}
+ ]},
+{name:'Perjantai',date:'13.11.',sub:'Josefin päivä',title:'Perjantai – Josefin päivä',delays:true,
+ note:'Linna ja Josefin hauta. Varaa haudalle aikaa, älä hoida sitä vain yhtenä nähtävyytenä muiden joukossa.',
+ items:[
+  {id:'fr-bf',t:T(8,30),dur:60,kind:'flex',title:'Aamiainen',desc:'Bread Gap (edullinen) tai U Stolu (brunssi).',
+   links:[['Bread Gap',MAPS('Bread Gap Praha')],['U Stolu',MAPS('U Stolu Praha')]],
+   light:{cost:1.5,dur:25,title:'Pikaaamiainen',desc:'Kahvi ja jotain käteen. Varsinainen aamiainen odottaa seuraavaa kertaa.'},
+   hints:[function(s){return s.hang>=2?'Valitse brunssi: U Stolu. Lämmintä, rasvaista ja istuen.':null}]},
+  {id:'fr-castle',t:T(9,30),dur:180,kind:'flex',dropAt:3,dropCost:4,
+   dropWhy:'Kriittinen kankkunen: linna jää väliin. Ruoka ja hauta pysyvät.',
+   dropWhyTime:'Aika ei riittänyt. Linna jäi pois, jotta hauta ehtii ennen hämärää.',
+   title:'Prahan linna',
+   desc:'Kävellen ylös Nerudovaa pitkin noin 15 min. Linnan alueella Nejvyšší purkrabství ja Staré purkrabství (linnakreivin virka-asunto ja vanha linna).',
+   links:[['Linna',MAPS('Prague Castle')],['Liput','https://www.hrad.cz/'],['Nejvyšší purkrabství',MAPS('Nejvyšší purkrabství Praha')]],
+   light:{at:2,cost:2,dur:90,title:'Prahan linna – kevytversio',desc:'Pihat ja Nejvyšší purkrabství ulkoa, ei museoita. Ratikka 22 ylös, jos jalat sanovat ei.'},
+   hints:[function(s){return s.hang===1?'Nerudova on rinne. Ota vesipullo.':null}]},
+  {id:'fr-lunch',t:T(12,30),dur:90,kind:'flex',title:'Lounas ja olut: U Černého vola',desc:'Hradčanyssa Loretan aukiolla. Maailman 18. paras olutkapakka.',
+   links:[['Kartta',MAPS('U Černého vola Praha')]],
+   light:{cost:2.2,dur:50,title:'Nopea lounas: U Černého vola',desc:'Yksi lautanen ja sitten eteenpäin. Olut jää ajatuksen tasolle.'},
+   hints:[function(s){return s.hang>=2?'Tilaa česnečka, valkosipulikeitto. Tšekkiläinen kankkuslääke. Olut vasta, jos toinen silmä aukeaa.':null}]},
+  {id:'fr-grave',t:T(14,0),dur:180,kind:'anchor',lateAt:T(15,15),key:'Josefin hauta',
+   title:'Malostranský hřbitov – Josef Hrabien hauta',
+   desc:'Hautausmaa on Smíchovissa noin 3 km päässä, ratikalla noin 15 min. Ota kynttilä mukaan. Ole perillä hyvissä ajoin ennen hämärää (n. klo 16). Hauta on rautaristi, jossa on musta laatta.',
+   links:[['Navigoi haudalle',DIR('Malostranský hřbitov Praha')],['Hauta kartalla',MAPS('Malostranský hřbitov Praha')]],
+   hints:[function(s){return s.hang>=2?'Bolt tai ratikka. Kolme kilometriä ei ole tänään kävelymatka.':null}]},
+  {id:'fr-rest',t:T(17,0),dur:120,kind:'flex',elastic:true,minDur:30,title:'Paluu keskustaan, lepo',desc:''},
+  {id:'fr-dinner',t:T(19,0),dur:120,kind:'flex',title:'Tšekkiläinen illallinen',
+   desc:'Vapaata keskustelua suvun historiasta. Esim. U Fleků (Prahan vanhin oluthuone).',
+   links:[['U Fleků',MAPS('U Fleků Praha')]],
+   hints:[function(s){return s.hang>=3?'Tänään ruoka ensin, olut toisena. Perhe ymmärtää.':null}]}
+ ]},
+{name:'Lauantai',date:'14.11.',sub:'Carlin päivä',title:'Lauantai – Carlin päivä',delays:true,
+ note:'Kävellään Hrabien kotitalot läpi ja päätetään ilta Carlin kastekirkkoon.',
+ items:[
+  {id:'sa-bf',t:T(9,0),dur:60,kind:'flex',title:'Aamiainen',desc:'',
+   light:{cost:1.5,dur:25,title:'Pikaaamiainen',desc:'Kahvi ja jotain käteen. Hrabien talot odottavat kadulla.'},
+   hints:[function(s){return s.hang>=2?'Nauti rauhassa. Lauantaina on iso päivä, ja huipennus on istumatyötä.':null}]},
+  {id:'sa-walk',t:T(10,0),dur:150,kind:'flex',title:'Hrabie-kävely Malá Stranalla',
+   desc:'Kaikki talot ovat alle 1 km säteellä majapaikasta: Malostranské nám. 36 ja 265 → Břetislavova 307 → Mostecká 52 → Dražického nám. 61 ja 62 → Kosárkovo nábř. 127 → Valdštejnská 150 → Pod Bruskou 141. Osoitteet löytyvät alkuperäisen sivun Suku-välilehdeltä.',
+   links:[['Talolista alkuperäisellä sivulla',ORIG]],
+   light:{at:2,cost:2,dur:70,title:'Hrabie-kävely – ydintalot',desc:'Vain lähimmät: Malostranské nám. 36 ja 265 sekä Dražického nám. 61 ja 62. Loput odottavat toista kertaa.'},
+   hints:[function(s){return s.hang>=1?'Etsi punainen kilpi: se on sama numero kuin 1800-luvun asiakirjoissa.':null}]},
+  {id:'sa-lunch',t:T(12,30),dur:60,kind:'flex',title:'Lounas',desc:''},
+  {id:'sa-bridge',t:T(13,30),dur:90,kind:'flex',title:'Kaarlensillan yli Vanhaankaupunkiin',
+   desc:'Řetězová 245/8 on Carlin synnyinkoti (1852). Železná 541/9 on perheen asunto vuodesta 1845. Säätyteatteri on aivan Železnán varrella, ja siellä Josef soitti.',
+   links:[['Řetězová 245/8',MAPS('Řetězová 8 Praha 1')],['Železná 541/9',MAPS('Železná 9 Praha 1')],['Säätyteatteri',MAPS('Estates Theatre Prague')]],
+   light:{at:3,cost:2.5,dur:50,title:'Vanhakaupunki – pikaversio',desc:'Řetězová 245/8 ja Säätyteatteri. Železná jää, jos jalat vaativat.'}},
+  {id:'sa-tori',t:T(15,0),dur:90,kind:'opt',dropAt:3,dropCost:1,
+   dropWhy:'Kriittinen kankkunen: torikierros vaihtui penkkiin ja lämpimään juomaan.',
+   dropWhyTime:'Aika ei riittänyt. Tori jäi pois, jotta ehditään kirkolle ajoissa.',
+   title:'Vanhankaupungin tori',desc:'Torikierros ja lämmin juoma ennen konserttia.',
+   links:[['Vanhankaupungin tori',MAPS('Old Town Square Prague')]]},
+  {id:'sa-church',t:T(16,30),dur:20,kind:'anchor',lateAt:T(16,40),key:'Jiljin kirkko',title:'Jiljin kirkko ja dominikaaniluostari',
+   desc:'Carlin kastekirkko (Husova). Viereisessä luostarissa toimi konservatorio, jossa Josef opetti. Carl Franz kastettiin täällä 2.5.1852 – kastemerkintä löytyy alkuperäisen sivun Suku-välilehdeltä. Tule ajoissa, niin ehdit katsella.',
+   links:[['Kostel sv. Jiljí',MAPS('Kostel sv. Jiljí Praha')],['Luostari',MAPS('Dominican monastery St Giles Prague')]]},
+  {id:'sa-concert',t:T(17,0),dur:90,kind:'fixed',key:'Konsertti',title:'Konsertti: Vivaldi – Neljä vuodenaikaa',
+   desc:'Dvořák Symphony Orchestra, Jiljin kirkko. Matkan huipennus: Hrabien jälkeläiset samassa kirkossa, jossa Carl kastettiin ja jonka vieressä Josef opetti.',
+   hints:[function(s){return s.hang>=2?'Neljä vuodenaikaa sopii kankkuselle: istut, eikä kukaan puhu. Älä vain kuorsaa kastemaljan vieressä.':null}]},
+  {id:'sa-dinner',t:T(18,30),dur:120,kind:'flex',title:'Illallinen ja olut',
+   desc:'Esim. U Kalicha (Švejkin kantapaikka) tai U Fleků. Pubiruoat ja olutparit löytyvät alkuperäisen sivun Paikat-välilehdeltä.',
+   links:[['U Kalicha',MAPS('U Kalicha Praha')],['U Fleků',MAPS('U Fleků Praha')]]}
+ ]},
+{name:'Sunnuntai',date:'15.11.',sub:'Paluu',title:'Sunnuntai – Paluu',delays:true,
+ note:'Kotiin hieman lähempänä suvun juuria kuin lähtiessä.',
+ items:[
+  {id:'su-bf',t:T(7,30),dur:45,kind:'flex',title:'Aamiainen ja pakkaus',desc:'',
+   light:{cost:1.5,dur:15,title:'Eväät mukaan ja pakkaus',desc:'Aamiainen pussiin, laukut kiinni.'},
+   hints:[function(s){return s.hang>=2?'Pakkaa jo lauantai-iltana. Sunnuntaiaamu ei ole luotettava.':null}]},
+  {id:'su-walk',t:T(8,15),dur:60,kind:'opt',dropAt:3,dropCost:1,
+   dropWhy:'Kriittinen kankkunen: hyvästit Malostranské náměstílle voi sanoa ikkunasta.',
+   dropWhyTime:'Aika ei riittänyt. Kone ei odota, joten kävely jäi pois.',
+   title:'Lyhyt aamukävely Malá Stranalla',desc:'Hyvästit Malostranské náměstílle.'},
+  {id:'su-depart',t:T(9,15),dur:45,kind:'anchor',lateAt:T(9,30),key:'Lähtö kentälle',title:'Lähtö kentälle',
+   desc:'Bolt/Uber noin 30 min. Lento lähtee 11.40, joten ole kentällä viimeistään klo 10.',
+   links:[['Reitti kentälle',DIR('Václav Havel Airport Prague Terminal 2')]],
+   hints:[function(s){return s.saku>0?'Tämä ei siirry. Kone ei odota, vaikka Saku odottaisi sänkyä.':null}]},
+  {id:'su-fly',t:T(11,40),dur:0,kind:'fixed',key:'Lento',title:'AY1222 Praha → Helsinki',desc:'Saapuu Helsinkiin klo 14.55.'}
+ ]}
+];
+
+var HANGQ=['',
+ 'Lievä kankkunen: vettä, kahvia ja hieman hitaampi alku.',
+ 'Paha kankkunen: rinteet pois, rasvaa ja istumista tilalle.',
+ 'Kriittinen: vain ankkurit ja ruoka. Loput odottavat.'];
+var WAKEL=['Kaikki hereillä','Osa vielä sängyssä','Kukaan ei hereillä'];
+var SAKUL=['Saku valmis','Saku melkein valmis','Saku ei vielä valmis'];
+var HANGL=['Ei kankkusta','Lievä kankkunen','Paha kankkunen','Kriittinen kankkunen'];
+
+var Q={
+ wake:{n:1,next:'saku',t:'Ovatko kaikki hereillä?',s:'',
+  o:[['Kyllä','Kaikki pystyssä'],['Melkein','Osa vielä vaakatasossa'],['Ei vielä','Hiljaisuus on kultaa']]},
+ saku:{n:2,next:'hang',t:'Onko Saku lähtövalmis?',s:'',
+  o:[['Valmis','Kengät jalassa'],['Melkein','Tulkitse varovasti'],['Ei vielä','Sänky johtaa']]},
+ hang:{n:3,next:'plan',t:'Kuinka paha kankkunen?',s:'Pahin tapaus ratkaisee.',
+  o:[['Ei lainkaan','Epäilyttävää'],['Lievä','Vettä ja kahvia'],['Paha','Rasvaa ja hiljaisuutta'],['Kriittinen','Vaaka-asento']]}
+};
+
+/* ---------- state ---------- */
+function tripDay(){
+  var d=new Date();
+  if(d.getFullYear()===2026&&d.getMonth()===10&&d.getDate()>=12&&d.getDate()<=15)return d.getDate()-12;
+  return null;
+}
+var S={step:'day',day:null,wake:0,saku:0,hang:0,guess:false,pinned:{}};
+var HIST=[];
+try{
+  var raw=JSON.parse(localStorage.getItem('np-jousto2')||'null');
+  if(raw&&raw.step==='plan'&&typeof raw.day==='number'&&DAYS[raw.day]&&Date.now()-raw.ts<10*3600*1000){
+    S.step='plan';S.day=raw.day;S.wake=raw.wake|0;S.saku=raw.saku|0;S.hang=raw.hang|0;S.guess=!!raw.guess;
+  }
+}catch(e){}
+function save(){
+  try{localStorage.setItem('np-jousto2',JSON.stringify({step:S.step,day:S.day,wake:S.wake,saku:S.saku,hang:S.hang,guess:S.guess,ts:Date.now()}))}catch(e){}
+}
+
+/* ---------- planner ---------- */
+function layout(os,delay){
+  var act=os.filter(function(o){return o.mode!=='dropped'});
+  var out=[],viols=[],cur=0;
+  act.forEach(function(o,k){
+    var it=o.it,lv=(o.mode==='light'&&it.light)?it.light:null;
+    var dur=(lv&&lv.dur!=null)?lv.dur:it.dur,start;
+    if(it.kind==='fixed'){
+      start=it.t;
+      if(cur>it.t)viols.push({k:k});
+    }else{
+      start=Math.max(it.t+(k===0?delay:0),cur);
+      start=Math.ceil(start/5)*5;
+      if(it.lateAt!=null&&start>it.lateAt)viols.push({k:k});
+    }
+    if(it.elastic){var n=act[k+1];dur=Math.max(it.minDur||30,n?n.it.t-start:dur)}
+    out.push({o:o,start:start,end:start+dur,dur:dur,shift:start-it.t,warn:false,lv:lv,prevEnd:cur});
+    cur=start+dur;
+  });
+  return {out:out,viols:viols};
+}
+function plan(day,s){
+  var pinned=S.pinned||{};
+  var os=day.items.map(function(it){return {it:it,mode:'full',why:''}});
+  os.forEach(function(o){
+    var it=o.it;
+    if(pinned[it.id])return;
+    if(it.dropAt!=null&&s.hang>=it.dropAt){o.mode='dropped';o.why=it.dropWhy}
+    else if(it.light&&it.light.at!=null&&s.hang>=it.light.at){o.mode='light'}
+  });
+  var delay=day.delays?(WAKE[s.wake]+SAKU[s.saku]+HANG[s.hang]):0;
+  var L;
+  for(var g=0;g<40;g++){
+    L=layout(os,delay);
+    if(!L.viols.length)break;
+    var applied=false;
+    for(var vi=0;vi<L.viols.length&&!applied;vi++){
+      var v=L.viols[vi],c=[];
+      L.out.forEach(function(r,k){
+        if(k>=v.k)return;
+        var o=r.o,it=o.it;
+        if(o.mode==='full'&&it.light)c.push({o:o,act:'light',cost:it.light.cost,k:k});
+        if(o.mode!=='dropped'&&it.dropCost!=null&&!pinned[it.id])c.push({o:o,act:'drop',cost:it.dropCost,k:k});
+      });
+      if(c.length){
+        c.sort(function(a,b){return a.cost-b.cost||b.k-a.k});
+        var best=c[0];
+        if(best.act==='light'){best.o.mode='light'}
+        else{best.o.mode='dropped';best.o.why=best.o.it.dropWhyTime||'Aika ei riittänyt, joten tämä jäi pois.'}
+        applied=true;
+      }
+    }
+    if(!applied)break;
+  }
+  L.viols.forEach(function(v){L.out[v.k].warn=true});
+  return {rows:L.out,dropped:os.filter(function(o){return o.mode==='dropped'}),delay:delay};
+}
+
+/* ---------- views ---------- */
+function quip(s,day){
+  if(!day.delays)return day.lockNote;
+  if(!s.wake&&!s.saku&&!s.hang)return 'Kaikki hereillä, Saku valmiina, pää kirkas. Ohjelma toimii sellaisenaan. Epäilyttävää, mutta nautitaan.';
+  var p=[];
+  if(s.wake===1)p.push('Osa porukasta on vielä vaakatasossa.');
+  if(s.wake===2)p.push('Kukaan ei ole oikein hereillä.');
+  if(s.saku===1)p.push('Saku on melkein valmis. Tulkitse “melkein” varovasti.');
+  if(s.saku===2)p.push('Saku ei ole vielä liikkeellä.');
+  if(s.hang>0)p.push(HANGQ[s.hang]);
+  return p.join(' ');
+}
+function anchorsHTML(P){
+  var li=[];
+  P.rows.forEach(function(r){
+    var it=r.o.it;if(!it.key)return;
+    var cls='',txt=it.key+' '+fmt(r.start);
+    if(it.lateAt!=null){
+      var slack=it.lateAt-r.start;
+      txt+=', viimeistään '+fmt(it.lateAt);
+      cls=r.warn?'bad':(slack<=30?'tight':(r.shift>=5?'moved':''));
+    }else{txt+=', lukittu'}
+    li.push('<li class="'+cls+'">'+txt+'</li>');
+  });
+  return li.length?'<ul class="anchors">'+li.join('')+'</ul>':'';
+}
+function itemHTML(r){
+  var o=r.o,it=o.it,lv=r.lv;
+  var title=(lv&&lv.title)||it.title;
+  var desc=(lv&&lv.desc!=null)?lv.desc:it.desc;
+  if(it.elastic)desc='Puskuri. Nyt '+r.dur+' min, ja tämä imee aikataulun heilunnan.';
+  var moved=r.shift>=5,pcls=it.kind==='fixed'?'lock':(moved?'moved':'');
+  var hints=(it.hints||[]).map(function(f){return f(S)}).filter(Boolean);
+  var tags=[];
+  if(it.kind==='fixed')tags.push('<span class="tag">Lukittu</span>');
+  if(it.kind==='opt')tags.push('<span class="tag">Valinnainen</span>');
+  if(it.lateAt!=null)tags.push('<span class="tag">Viimeistään '+fmt(it.lateAt)+'</span>');
+  if(o.mode==='light')tags.push('<span class="tag light">Kevytversio</span>');
+  if(S.pinned[it.id])tags.push('<span class="tag pin">Pakotettu mukaan</span>');
+  var links=(it.links||[]).map(function(l){return '<a class="chip" href="'+l[1]+'" target="_blank" rel="noopener">'+l[0]+'</a>'}).join('');
+  var warn='';
+  if(r.warn){
+    warn=it.kind==='fixed'
+      ?'<p class="warn">Tämä alkaa klo '+fmt(it.t)+', mutta edellinen kohta ehtii loppua vasta '+fmt(r.prevEnd)+'. Päätä itse, mistä tingitään.</p>'
+      :'<p class="warn">Ei mahdu: tämä alkaisi klo '+fmt(r.start)+', viimeistään '+fmt(it.lateAt)+'. Päätä itse, mistä tingitään.</p>';
+  }
+  return '<article class="item"><div class="when"><span class="plate '+pcls+'">'+fmt(r.start)+'</span>'+
+    (moved?'<span class="was">'+fmt(it.t)+'</span>':'')+'</div><div class="body"><h3>'+title+'</h3>'+
+    (desc?'<p class="d">'+desc+'</p>':'')+
+    hints.map(function(h){return '<p class="hint">'+h+'</p>'}).join('')+warn+
+    (tags.length?'<div class="tags">'+tags.join('')+'</div>':'')+
+    (links?'<div class="links">'+links+'</div>':'')+'</div></article>';
+}
+function listHTML(P){
+  var out=[];
+  P.rows.forEach(function(r,i){
+    if(i>0){
+      var p=P.rows[i-1],gap=r.start-p.end;
+      if(gap>=45&&p.o.it.kind!=='fixed'&&r.o.it.kind!=='fixed'){
+        out.push('<div class="gaprow"><p class="gap">Vapaata '+fmt(p.end)+'–'+fmt(r.start)+' ('+gap+' min). Kahvila, penkki tai takaisin ohjelmaan.</p></div>');
+      }
+    }
+    out.push(itemHTML(r));
+  });
+  return '<div class="list">'+out.join('')+'</div>';
+}
+
+function bigBtn(attrs,title,sub,cls){
+  return '<button type="button" class="big'+(cls?' '+cls:'')+'" '+attrs+'><b>'+title+'</b>'+(sub?'<span>'+sub+'</span>':'')+'</button>';
+}
+function miniHead(){
+  return '<div class="mini"><button type="button" class="homelink" data-home="1" aria-label="Takaisin alkuun"><b>Niemet Prahassa</b></button>'+(HIST.length?'<button type="button" class="back" data-back="1">Takaisin</button>':'')+'</div>';
+}
+function prog(n){
+  return '<div class="prog" aria-hidden="true">'+[1,2,3].map(function(i){return '<i class="'+(i<=n?'on':'')+'"></i>'}).join('')+'</div>'+
+    '<p class="sr">Kysymys '+n+' / 3</p>';
+}
+
+function viewDay(){
+  return '<header class="hero"><h1 class="grunge">Niemet Prahassa</h1><span class="stamp grunge">Joustoversio</span>'+
+    '<p>Jyri, Joni ja Saku Hrabien suvun juurilla.</p></header>'+
+    '<h2 class="qt grunge qgap" tabindex="-1" data-focus="1">Mikä päivä tänään on?</h2>'+
+    DAYS.map(function(d,i){
+      return bigBtn('data-day="'+i+'"',d.name,'','');
+    }).join('')+
+    bigBtn('data-recall="1"','En tiedä','','alt');
+}
+function viewRecall(){
+  var td=tripDay();
+  return miniHead()+
+    '<h2 class="qt grunge" tabindex="-1" data-focus="1">Muistellaan</h2>'+
+    '<p class="qs">Mikä on viimeisin asia, jonka muistat?</p>'+
+    bigBtn('data-rday="0"','Lentokenttä ja lounge','Silloin on vielä torstai')+
+    bigBtn('data-rday="1"','Ensimmäinen olut U Hrochassa','Silloin on perjantai')+
+    bigBtn('data-rday="2"','Linna ja Josefin hauta','Silloin on lauantai')+
+    bigBtn('data-rday="3"','Hrabie-kävely ja konsertti','Silloin on sunnuntai')+
+    (td!==null?bigBtn('data-phone="'+td+'"','Puhelimen mukaan on '+DAYS[td].name.toLowerCase(),'Uskotaanko puhelinta?','alt'):'')+
+    bigBtn('data-rday="1"','En muista mitään','Aloitetaan perjantaista','alt');
+}
+function viewQ(key){
+  var q=Q[key];
+  return miniHead()+prog(q.n)+
+    '<h2 class="qt grunge" tabindex="-1" data-focus="1">'+q.t+'</h2>'+
+    (q.s?'<p class="qs">'+q.s+'</p>':'<p class="qs"></p>')+
+    q.o.map(function(o,i){
+      var cls=(key==='hang'&&i===2)?'s2':((key==='hang'&&i===3)?'s3':'');
+      return bigBtn('data-ans="'+key+'" data-v="'+i+'"',o[0],o[1],cls);
+    }).join('');
+}
+function viewPlan(){
+  var day=DAYS[S.day],P=plan(day,S);
+  var nLight=P.rows.filter(function(r){return r.o.mode==='light'}).length;
+  var counts=(P.dropped.length||nLight)
+    ?(P.dropped.length+' kohdetta pudotettu, '+nLight+' kevennetty tältä päivältä.')
+    :'Kaikki tämän päivän kohteet ovat mukana.';
+  var delayBox=day.delays
+    ?'<div class="delay'+(P.delay?' hot':'')+'"><b>'+(P.delay?'+'+P.delay+' min':'Ei siirtymää')+'</b><span>aikataulun siirtymä</span></div>'
+    :'<div class="delay lock"><b>Lukittu</b><span>aikataulun siirtymä</span></div>';
+  var pills=day.delays
+    ?'<span class="pill">'+WAKEL[S.wake]+'</span><span class="pill">'+SAKUL[S.saku]+'</span><span class="pill">'+HANGL[S.hang]+'</span>'
+    :'<span class="pill">Lähtöpäivä</span>';
+  if(S.guess)pills+='<span class="pill alt">Päivä arvioitu muistelemalla</span>';
+  return miniHead().replace('<b>','<b class="grunge">')+
+    '<h2 class="dayhead grunge" tabindex="-1" data-focus="1">'+day.title+'</h2>'+
+    '<div class="pills">'+pills+'</div>'+
+    '<div class="actions">'+(day.delays?'<button type="button" class="chipbtn" data-edit="1">Muuta tilannetta</button>':'')+
+    '<button type="button" class="chipbtn" data-newday="1">Vaihda päivää</button></div>'+
+    '<section class="status" aria-live="polite"><div class="delayrow">'+delayBox+'<p class="quip">'+quip(S,day)+'</p></div>'+
+    (day.delays?'<p class="counts">'+counts+'</p>':'')+anchorsHTML(P)+'</section>'+
+    listHTML(P)+
+    (P.dropped.length?'<details class="dropped" open><summary>Pudotettu tältä päivältä ('+P.dropped.length+')</summary><ul>'+
+      P.dropped.map(function(o){
+        return '<li><div><strong>'+fmt(o.it.t)+' '+o.it.title+'</strong><span>'+o.why+'</span></div><button type="button" class="chipbtn" data-pin="'+o.it.id+'">Ota takaisin</button></li>';
+      }).join('')+'</ul></details>':'')+
+    '<p class="note">'+day.note+'</p>'+
+    '<footer>Sisältö: serkun Niemet Prahassa -sivu, kellonajat Prahan aikaa. <a href="'+ORIG+'" target="_blank" rel="noopener">Alkuperäinen sivu</a></footer>';
+}
+
+function render(anim){
+  var app=document.getElementById('app'),h;
+  if(S.step==='day')h=viewDay();
+  else if(S.step==='recall')h=viewRecall();
+  else if(S.step==='plan')h=viewPlan();
+  else h=viewQ(S.step);
+  app.innerHTML='<div class="screen'+(anim?' enter':'')+'">'+h+'</div>';
+  if(anim){
+    window.scrollTo(0,0);
+    var f=app.querySelector('[data-focus]');
+    if(f&&f.focus)f.focus({preventScroll:true});
+  }
+}
+function go(step,noPush){
+  if(!noPush)HIST.push(S.step);
+  S.step=step;save();render(true);
+}
+function pickDay(i,guess){
+  S.day=i;S.guess=guess;S.wake=0;S.saku=0;S.hang=0;S.pinned={};
+  if(i===0)go('plan');else go('wake');
+}
+
+document.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  var d=b.dataset;
+  if(d.day!==undefined){pickDay(+d.day,false);return}
+  if(d.rday!==undefined){pickDay(+d.rday,true);return}
+  if(d.phone!==undefined){pickDay(+d.phone,false);return}
+  if(d.recall){go('recall');return}
+  if(d.ans){S[d.ans]=+d.v;S.pinned={};go(Q[d.ans].next);return}
+  if(d.back){var p=HIST.pop();if(p)go(p,true);return}
+  if(d.edit){S.pinned={};HIST=[];go('wake');return}
+  if(d.newday||d.home){HIST=[];go('day',true);return}
+  if(d.pin){S.pinned[d.pin]=true;render(false);return}
+});
+render(false);
+})();
+</script>
+</body>
+</html>
